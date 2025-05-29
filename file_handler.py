@@ -60,7 +60,7 @@ def load_tasks():
                     raise ValueError(f"找不到版本 {data['version']}的迁移方案")
                 data = migration_func(data)
             
-            return data["tasks"]
+            return data
         
     except (json.JSONDecodeError, KeyError) as e:
         print(f"数据加载失败: {str(e)}")
